@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SportingArticleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,11 +14,15 @@ Route::middleware(['auth:sanctum'])->group(function () {
     });
 });
 
+// Rotas categorias
 Route::get('/category', [CategoryController::class, 'index']);
 Route::post('/category', [CategoryController::class, 'store']);
 Route::get('/category/{id}', [CategoryController::class, 'show']);
 Route::put('/category/{id}', [CategoryController::class, 'update']);
 Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
+
+// Rotas Artigos esportivos outro modo de criar rotas
+Route::apiResource('/sporting-articles', SportingArticleController::class);
 
 Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
     Route::apiResource('/users', UserController::class);

@@ -14,4 +14,8 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function sportingArticles(){
+        return $this->hasMany(SportingArticle::class, 'category_id', 'id');
+    }
 }
