@@ -15,7 +15,7 @@ class Category extends Model
         'name'
     ];
 
-    public function sportingArticles(){
-        return $this->hasMany(SportingArticle::class, 'category_id', 'id');
+    public function SportingProducts(){
+        return $this->hasMany(SportingProduct::class, 'category_id', 'id');
     }
 }

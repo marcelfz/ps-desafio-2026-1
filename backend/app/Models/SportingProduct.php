@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class SportingArticle extends Model
+class SportingProduct extends Model
 {
-    /** @use HasFactory<\Database\Factories\SportingArticleFactory> */
+    /** @use HasFactory<\Database\Factories\SportingProductFactory> */
     use HasFactory, HasUuids;
 
     protected $fillable = [

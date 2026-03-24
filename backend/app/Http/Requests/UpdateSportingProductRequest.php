@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSportingArticleRequest extends FormRequest
+class UpdateSportingProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,13 +22,13 @@ class StoreSportingArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'min:3', 'max:80'],
-            'brand' => ['required', 'min:3', 'max:80'],
-            'price' => ['required', 'numeric', 'min:0'],
-            'launch_year' => ['required', 'integer', 'min:2000', 'max:' . date('Y')],
+            'name' => ['sometimes', 'min:3', 'max:80'],
+            'brand' => ['sometimes', 'min:3', 'max:80'],
+            'price' => ['sometimes', 'numeric', 'min:0'],
+            'launch_year' => ['sometimes', 'integer', 'min:2000', 'max:' . date('Y')],
             'image' => ['file'],
-            'stock_quantity' => ['required', 'integer', 'min:0'],
-            'category_id' => ['required', 'exists:categories,id']
+            'stock_quantity' => ['sometimes', 'integer', 'min:0'],
+            'category_id' => ['sometimes']
         ];
     }
 }

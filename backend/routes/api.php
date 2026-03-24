@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\SportingArticleController;
+use App\Http\Controllers\SportingProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,13 +19,13 @@ Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
     Route::post('/category', [CategoryController::class, 'store']);
     Route::put('/category/{id}', [CategoryController::class, 'update']);
     Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
-    Route::apiResource('/sporting-article', SportingArticleController::class)->except(['index', 'show']);
+    Route::apiResource('/sporting-product', SportingProductController::class)->except(['index', 'show']);
 });
 
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/{id}', [CategoryController::class, 'show']);
-Route::get('/sporting-article', [SportingArticleController::class, 'index']);
-Route::get('/sporting-article/{id}', [SportingArticleController::class, 'show']);
+Route::get('/sporting-product', [SportingProductController::class, 'index']);
+Route::get('/sporting-product/{id}', [SportingProductController::class, 'show']);
 
 Route::get('/', function () {
     return ['Laravel' => app()->version()];
