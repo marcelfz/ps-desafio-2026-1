@@ -28,7 +28,7 @@ class StoreSportingArticleRequest extends FormRequest
             'launch_year' => ['required', 'integer', 'min:2000', 'max:' . date('Y')],
             'image' => ['file'],
             'stock_quantity' => ['required', 'integer', 'min:0'],
-            'category_id' => ['required']
+            'category_id' => ['required', 'exists:categories,id']
         ];
     }
 }

@@ -14,14 +14,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
     });
 });
 
-
-
 Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
     Route::apiResource('/users', UserController::class);
     Route::post('/category', [CategoryController::class, 'store']);
     Route::put('/category/{id}', [CategoryController::class, 'update']);
     Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
-    Route::apiResource('/sporting-articles', SportingArticleController::class)->except(['index', 'show']);
+    Route::apiResource('/sporting-article', SportingArticleController::class)->except(['index', 'show']);
 });
 
 Route::get('/category', [CategoryController::class, 'index']);
