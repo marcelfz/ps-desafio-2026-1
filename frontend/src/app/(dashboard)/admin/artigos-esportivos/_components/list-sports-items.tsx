@@ -19,7 +19,7 @@ import { DialogInformationSportsItem } from './dialog-information-sports-item'
 import { DialogCreateSportsItem } from './dialog-create-sports-item'
 
 export default async function ListSportsItems() {
-  const { response } = null // requisicao para api
+  const { response } = await api<sportsItemType[]>('GET', '/sporting-product')
 
   if (!response) {
     return (
@@ -46,8 +46,11 @@ export default async function ListSportsItems() {
           <TableHeader>
             <TableRow>
               <TableHead>Imagem</TableHead>
-              <TableHead>Titulo</TableHead>
+              <TableHead>Nome</TableHead>
+              <TableHead>Marca</TableHead>
               <TableHead>Categoria</TableHead>
+              <TableHead>Ano de lançamento</TableHead>
+              <TableHead>Preço</TableHead>
               <TableHead>Quantidade</TableHead>
               <TableHead className="text-right">Ações</TableHead>
             </TableRow>
@@ -59,9 +62,12 @@ export default async function ListSportsItems() {
                   <TabbleCellImage src={sportsItem.image} />
                 </TableCell>
                 
-                <TableCell>{sportsItem.title}</TableCell>
-                <TableCell>{sportsItem.amount}</TableCell>
+                <TableCell>{sportsItem.name}</TableCell>
+                <TableCell>{sportsItem.brand}</TableCell>
                 <TableCell>{sportsItem.category.name}</TableCell>
+                <TableCell>{sportsItem.launch_year}</TableCell>
+                <TableCell>{sportsItem.price}</TableCell>
+                <TableCell>{sportsItem.stock_quantity}</TableCell>
                 {/* demais propriedades de sportsItemType */}
                 
                 <TableCell className="flex justify-end gap-2">
