@@ -26,6 +26,7 @@
         "./src/*"
       ]
     },
+    "ignoreDeprecations": "6.0",
     "downlevelIteration": true
   },
   "include": [

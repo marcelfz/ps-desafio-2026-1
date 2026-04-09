@@ -1,0 +1,28 @@
+.page{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding-bottom: 340px;
+    background: #ebe7e6;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 50px;
+  letter-spacing: -2px;
+  color: #150705;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 40px 0 0;
+  margin-bottom: 24px;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}

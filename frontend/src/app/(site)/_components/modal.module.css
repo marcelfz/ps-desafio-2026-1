@@ -1,0 +1,227 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background: #111;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  animation: slideUp 500ms ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.modalClose:hover {
+  opacity: 1;
+}
+
+.modalImg {
+  background: #f5f5f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalBody {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalMeta {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.modalName {
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.modalPrice {
+  font-size: 24px;
+  font-weight: 700;
+  color: #c8321a;
+  margin-bottom: 32px;
+}
+
+.modalInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #222;
+}
+
+.modalInfoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modalInfoLabel {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #444;
+}
+
+.modalInfoValue {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.modalBtn {
+  background: #fff;
+  color: #111;
+  border: none;
+  padding: 16px;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease, color 0.2s ease;
+  margin-top: auto;
+}
+
+.modalBtn:hover {
+  background: #c8321a;
+  color: #fff;
+}
+
+.modalBtn:disabled {
+  background: #222;
+  color: #444;
+  cursor: not-allowed;
+}
+
+.cepSection {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.cepLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.cepInput {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e53e3e;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    color: #111;
+    margin-bottom: 6px;
+}
+
+.cepLoading {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.cepError {
+    font-size: 0.8rem;
+    color: #e53e3e;
+}
+
+.cepResult {
+    font-size: 0.85rem;
+    color: #7be97b;
+    border-radius: 6px;
+    padding: 0.2rem 0.4rem;
+    line-height: 0.5;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+@media (max-width: 600px) {
+
+  .modal {
+    grid-template-columns: 1fr;
+    max-height: 85vh;
+  }
+
+  .modalImg {
+    height: 240px;
+  }
+
+  .modalClose {
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    opacity: 1;
+  }
+
+  .modalBody {
+    padding: 15px 15px;
+  }
+
+  .modalName {
+    font-size: 22px;
+  }
+
+  .modalPrice {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+}

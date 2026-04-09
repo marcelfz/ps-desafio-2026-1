@@ -38,3 +38,16 @@ export async function destroySportsItem(id: string) {
     return JSON.stringify(res)
 
 }
+
+
+export async function comprar(id: string) {
+
+    const res = await api('POST', `/sporting-product/${id}/buy`)
+
+    if(!res.error){
+        revalidatePath('/')
+    }
+
+    return JSON.stringify(res)
+
+}

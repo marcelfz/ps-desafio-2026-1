@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 @layer base {
     :root {
         --background: 210 31% 94%;
@@ -34,15 +36,25 @@
         --destructive-foreground: 5 80% 94%;
 
         --radius: 0.25rem;
+       
     }
 }
 
 @layer base {
     * {
         @apply border-border;
+        font-family: "Anton", sans-serif;
     }
 
     body {
         @apply bg-background text-foreground;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
     }
 }
+

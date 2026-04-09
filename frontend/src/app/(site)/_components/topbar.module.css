@@ -1,0 +1,36 @@
+.topbar{
+  background:#c8321a;
+  color:#fff5f0;
+  font-family: monospace;
+  font-size:11px;
+  letter-spacing:1.5px;
+  text-align:center;
+  padding:8px;
+  text-transform:uppercase;
+  overflow: hidden;
+}
+
+.topbarText{
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%; 
+  animation: marquee 12s linear infinite;
+}
+
+.topbarText:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .topbar{
+    font-size: 8px;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); } 
+}
+
+

@@ -1,0 +1,33 @@
+.wrapper{
+    margin: 2rem auto;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    transition: all 0.5s ease;
+    max-width: 1400px;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 0.3fr);
+        margin: 15px;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 0.3fr);
+        margin: 15px;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 15px;
+        gap: 15px;
+    }
+}

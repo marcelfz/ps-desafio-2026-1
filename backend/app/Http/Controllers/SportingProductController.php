@@ -6,6 +6,7 @@ use App\Models\SportingProduct;
 use App\Http\Requests\StoreSportingProductRequest;
 use App\Http\Requests\UpdateSportingProductRequest;
 use Illuminate\Support\Facades\Storage;
+use Nette\Utils\Json;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
@@ -79,5 +80,17 @@ class SportingProductController extends Controller
         $SportingProduct->delete();
 
         return response()->json(['message' => 'Artigo esportivo deletado com sucesso'], Response::HTTP_OK);
+    }
+
+    public function buy($id): JsonResponse
+    {
+        $SportingProduct = $this->SportingProduct->findOrFail($id);
+
+        if($SportingProduct->stock_quantity <= 0){
+            return response()->json(['message' => 'Esgotado'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $SportingProduct->decrement('stock_quantity');
+        return response()->json(['message' => 'Produto comprado com sucesso'], Response::HTTP_OK);
     }
 }

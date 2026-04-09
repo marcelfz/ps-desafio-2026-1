@@ -12,7 +12,7 @@ import {
 import { api } from '@/services/api'
 import { sportsItemType } from '@/types/sportsItem'
 import { Button } from '@/components/button'
-import { LuInfo, LuPen, LuPlusCircle, LuTrash } from 'react-icons/lu'
+import { LuInfo, LuPen, LuPlus, LuTrash } from 'react-icons/lu'
 import { DialogUpdateSportsItem } from './dialog-update-sports-item'
 import { DialogSportsItemDelete } from './dialog-delete-sports-item'
 import { DialogInformationSportsItem } from './dialog-information-sports-item'
@@ -36,7 +36,7 @@ export default async function ListSportsItems() {
       <DashboardContainer className="flex h-min justify-between space-x-0 gap-y-2.5 max-sm:flex-col">
         <DialogCreateSportsItem>
           <Button size="sm">
-            <LuPlusCircle />
+            <LuPlus />
             Novo artigo esportivo
           </Button>
         </DialogCreateSportsItem>

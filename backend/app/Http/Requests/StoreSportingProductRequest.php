@@ -26,7 +26,7 @@ class StoreSportingProductRequest extends FormRequest
             'brand' => ['required', 'min:3', 'max:80'],
             'price' => ['required', 'numeric', 'min:0'],
             'launch_year' => ['required', 'integer', 'min:2000', 'max:' . date('Y')],
-            'image' => ['file'],
+            'image' => ['file', 'required'],
             'stock_quantity' => ['required', 'integer', 'min:0'],
             'category_id' => ['required', 'exists:categories,id']
         ];
