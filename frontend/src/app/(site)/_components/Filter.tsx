@@ -11,7 +11,7 @@ export default function Filter({sportingProducts} : {sportingProducts : sportsIt
     const [marca, setMarca] = useState('Marca');
     const [ordem, setOrdem] = useState('padrao');
 
-    const removerAcentos = (texto) => {
+    const removerAcentos = (texto: string) => {
         return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     };
 
