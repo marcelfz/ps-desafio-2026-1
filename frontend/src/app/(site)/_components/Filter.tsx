@@ -11,8 +11,12 @@ export default function Filter({sportingProducts} : {sportingProducts : sportsIt
     const [marca, setMarca] = useState('Marca');
     const [ordem, setOrdem] = useState('padrao');
 
+    const removerAcentos = (texto) => {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    };
+
     const filtrados = sportingProducts.filter(product=>{
-        const matchBusca = product.name.toLowerCase().includes(busca.toLowerCase());
+        const matchBusca = removerAcentos(product.name).toLowerCase().includes(removerAcentos(busca).toLowerCase());
         const matchCategoria = categoria === 'Categoria' || product.category.name === categoria;
         const matchMarca = marca === 'Marca' || product.brand === marca;
         return matchBusca && matchCategoria && matchMarca;
